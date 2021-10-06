@@ -1,4 +1,4 @@
-package com.springsecurity.services.we.com.springsecurity.services.we.config;
+package com.springsecurity.config;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
