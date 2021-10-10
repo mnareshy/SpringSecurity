@@ -47,8 +47,9 @@ public class PetStoreSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.httpBasic();
+        http.formLogin();
         http.authorizeRequests()
-                .mvcMatchers(HttpMethod.GET,"/petdetailsService/petDetails/**").
+                .mvcMatchers(HttpMethod.GET, "/petdetailsService/petDetails/{petID:^[0-1]*$}").
                 hasAnyRole("ADMIN","USER")
                 .mvcMatchers(HttpMethod.POST,"/petdetailsService/petDetails").
                 hasRole("ADMIN").anyRequest().authenticated()
