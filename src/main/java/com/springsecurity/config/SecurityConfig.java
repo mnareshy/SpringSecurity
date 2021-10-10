@@ -25,6 +25,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -70,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().antMatchers("/name").authenticated().and().httpBasic().and().formLogin();
         http.cors().and().csrf().disable();
-        http.addFilterBefore(new CustemServletFIlter(), BasicAuthenticationFilter.class);
+        //http.addFilterBefore(new CustemServletFIlter(), BasicAuthenticationFilter.class);
 
 
     }

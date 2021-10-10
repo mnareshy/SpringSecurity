@@ -3,6 +3,7 @@ package com.springsecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,6 +19,9 @@ public class SpringSecurityApp {
 
     public static void main(String[] args) {
 
+    /*    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        System.out.println("*************** "+bCryptPasswordEncoder.encode("sairam"));
+*/
         SpringApplication.run(SpringSecurityApp.class);
     }
 }

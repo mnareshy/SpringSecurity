@@ -9,7 +9,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import java.io.IOException;
 
-@Component
+//@Component
 public class CustemSpringGenericBeanFilter extends GenericFilterBean {
 
     //init params from WEB.xml will be loaded by Spring
