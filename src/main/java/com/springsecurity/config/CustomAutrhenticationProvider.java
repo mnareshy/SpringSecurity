@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@Component
+//@Component
 public class CustomAutrhenticationProvider implements AuthenticationProvider {
 
 

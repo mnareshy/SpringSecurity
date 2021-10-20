@@ -18,8 +18,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collection;
 
+/*
 @Configuration
 @Order(1)
+*/
 public class PetStoreSecurity extends WebSecurityConfigurerAdapter {
 
     @Autowired

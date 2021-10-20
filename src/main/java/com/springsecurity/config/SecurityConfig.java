@@ -27,8 +27,8 @@ import java.util.Map;
 
 
 
-@Configuration
-@EnableWebSecurity
+/*@Configuration
+@EnableWebSecurity*/
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
