@@ -91,12 +91,14 @@
             <artifactId>spring-cloud-starter</artifactId>
             <version>3.0.4</version>
         </dependency>
-<!--
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-            <version>2.2.6.RELEASE</version>
-        </dependency>-->
+            <version>2.5.4</version>
+        </dependency>
+
 
 
 

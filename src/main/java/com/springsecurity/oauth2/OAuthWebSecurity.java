@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+//@Order(1)
 public class OAuthWebSecurity extends WebSecurityConfigurerAdapter {
 
     @Override

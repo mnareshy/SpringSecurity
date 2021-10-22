@@ -1,0 +1,3 @@
+keytool -genkeypair -alias jwttoken -keyalg RSA -keypass jwttoken -keystore jwttoken.jks -storepass jwttoken
+
+keytool -list -rfc --keystore jwttoken.jks | openssl x509 -inform pem -pubkey

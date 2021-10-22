@@ -9,11 +9,13 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 
-/*@Configuration
-@EnableResourceServer*/
-public class OAuthResourceServer extends ResourceServerConfigurerAdapter {
+@Configuration
+@EnableResourceServer
+public class OAuthResourceServerWithJWTURLAccessToPublicKey extends ResourceServerConfigurerAdapter {
 
     public static final String PET_STORE_RESOURCE_ID = "petDetails";
+
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         System.out.println("OAuthResourceServer >>>>"+PET_STORE_RESOURCE_ID);
@@ -35,4 +37,7 @@ public class OAuthResourceServer extends ResourceServerConfigurerAdapter {
 
         System.out.println(">>>>> "+ SecurityContextHolder.getContext().getAuthentication());
     }
+
+
+
 }
