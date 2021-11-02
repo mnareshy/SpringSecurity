@@ -22,8 +22,8 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 import javax.sql.DataSource;
 import java.security.KeyPair;
 
-@Configuration
-@EnableAuthorizationServer
+/*@Configuration
+@EnableAuthorizationServer*/
 public class OAuthorizationServerWithJWTWithURLTOPublicKey extends AuthorizationServerConfigurerAdapter {
 
     public static final String PET_STORE_RESOURCE_ID = "petDetails";

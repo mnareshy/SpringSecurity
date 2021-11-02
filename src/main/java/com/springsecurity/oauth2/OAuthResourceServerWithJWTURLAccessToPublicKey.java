@@ -9,11 +9,16 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 
-@Configuration
-@EnableResourceServer
+/*@Configuration
+@EnableResourceServer*/
 public class OAuthResourceServerWithJWTURLAccessToPublicKey extends ResourceServerConfigurerAdapter {
 
+
     public static final String PET_STORE_RESOURCE_ID = "petDetails";
+
+//    Setting the folling property in application.properties let ResourceServer understand that the  public key is supplied from the URL exposed
+//    springsecurity.oauth2.resource.jwd.key-uri=http:\\localhost:\\8080/oauth/token_key
+//    Hence you dont have crete TokenSrore and JWTAccessTokenConverter.
 
 
     @Override
@@ -22,6 +27,7 @@ public class OAuthResourceServerWithJWTURLAccessToPublicKey extends ResourceServ
 
         resources.resourceId(PET_STORE_RESOURCE_ID);
     }
+
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -41,3 +47,5 @@ public class OAuthResourceServerWithJWTURLAccessToPublicKey extends ResourceServ
 
 
 }
+
+
