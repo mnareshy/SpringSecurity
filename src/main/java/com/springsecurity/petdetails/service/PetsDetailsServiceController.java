@@ -9,6 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/petdetailsService")
 public class PetsDetailsServiceController {
 
@@ -17,6 +18,7 @@ public class PetsDetailsServiceController {
 
 
     @PostMapping("/petDetails")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public PetDetailsModel createPetDetails(@RequestBody PetDetailsModel petDetailsModel){
 
         System.out.println(">>>>>>"+petDetailsModel.getPetBreed());
@@ -28,19 +30,19 @@ public class PetsDetailsServiceController {
 
 
     @GetMapping("/petDetails/{petID}")
-    @PreAuthorize("hasRole('admin_user')") // This is enabled in GlobalMethodWebSecurity class
+    @PreAuthorize("hasAnyRole('ADMIN','USER')") // This is enabled in GlobalMethodWebSecurity class
     public PetDetailsModel getpetDetails(@PathVariable("petID") int petID){
 
         PetDetailsModel petDetailsModel = petDetailsModelRepository.findByPetID(petID);
         return petDetailsModel;
     }
 
-   @GetMapping("/dummy")
-   @PostAuthorize("returnObject.equals(' The Dummy')") // This is enabled in GlobalMethodWebSecurity class , returnObject
+   @GetMapping("/getPetStoreAppDetails")
+   @PostAuthorize("returnObject.equals('Pet Store - Is am online store for buying pets and pet food ')") // This is enabled in GlobalMethodWebSecurity class , returnObject
    // is wrapped by Spring which of method return Object, "returnObject.equals(' The Dummy12')" will not authirize the request
-    public String getDummy(){
+    public String getPetStoreAppDetails(){
 
-        return " The Dummy";
+        return "Pet Store - Is am online store for buying pets and pet food ";
     }
 
 }
